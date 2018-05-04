@@ -1,3 +1,9 @@
+"""
+The program begins with setting a list of article link tags to the list of links
+in the intial page. Then, it goes into a loop, finding a random article link tag
+in the page, extracting the href attribute from it, printing the page, and
+getting a new list of links from the extracted url.
+"""
 import requests
 from bs4 import BeautifulSoup
 import datetime
@@ -6,6 +12,8 @@ import re
 
 
 random.seed(datetime.datetime.now())
+
+# TODO: needs to add exceptions to make the program more robust.
 
 
 def main():
