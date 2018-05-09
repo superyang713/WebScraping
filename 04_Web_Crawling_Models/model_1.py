@@ -14,15 +14,14 @@ def get_page(url):
     return BeautifulSoup(r.text, 'html.parser')
 
 
-def scrape_NYTimes(url):
+def scrape_Brookings(url):
     bs = get_page(url)
     title = bs.find('h1').text
-    paragraphs = bs.find_all('p', {'class': 'story-content'})
-    body = '\n'.join([paragraph.text for paragraph in paragraphs])
+    body = bs.find('div', {'class': 'post-body post-body-enhanced'}).text
     return Content(url, title, body)
 
 
-def scrape_Brookings(url):
+def scrape_NYTimes(url):
     bs = get_page(url)
     title = bs.find('h1').text
     paragraphs = bs.find_all('p', {"class": "css-n7ezar e2kc3sl0"})
@@ -32,7 +31,11 @@ def scrape_Brookings(url):
 
 url_NYTimes = ('https://www.nytimes.com/2018/05/07/nyregion/'
                'new-york-attorney-general-eric-schneiderman-abuse.html')
-content = scrape_NYTimes(url_NYTimes)
-print('Title: {}'.format(content.title))
-print('URL: {}\n'.format(content.url))
-print(content.body)
+url_Brookings = ('https://www.brookings.edu/blog/future-development/2018/'
+                 '05/04/a-leap-in-gender-equality-begins-with-better-data/')
+content_NYTimes = scrape_NYTimes(url_NYTimes)
+content_Brookings = scrape_Brookings(url_Brookings)
+
+print('Title: {}'.format(content_Brookings.title))
+print('URL: {}\n'.format(content_Brookings.url))
+print(content_Brookings.body)
