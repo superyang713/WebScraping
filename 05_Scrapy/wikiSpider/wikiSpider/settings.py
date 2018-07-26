@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for wiki_spider project
+# Scrapy settings for wikiSpider project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'wiki_spider'
+BOT_NAME = 'wikiSpider'
 
-SPIDER_MODULES = ['wiki_spider.spiders']
-NEWSPIDER_MODULE = 'wiki_spider.spiders'
+SPIDER_MODULES = ['wikiSpider.spiders']
+NEWSPIDER_MODULE = 'wikiSpider.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'wiki_spider (+http://www.yourdomain.com)'
+#USER_AGENT = 'wikiSpider (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'wiki_spider.middlewares.WikiSpiderSpiderMiddleware': 543,
+#    'wikiSpider.middlewares.WikispiderSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'wiki_spider.middlewares.WikiSpiderDownloaderMiddleware': 543,
+#    'wikiSpider.middlewares.WikispiderDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -64,9 +64,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'wiki_spider.pipelines.WikiSpiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'wikiSpider.pipelines.WikispiderPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
